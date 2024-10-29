@@ -1,6 +1,6 @@
 ﻿namespace People.API.Models;
 
-public class DataPeople
+public class DataPeopleModels
 {
     public string Name { get; set; }
     public string Height { get; set; }

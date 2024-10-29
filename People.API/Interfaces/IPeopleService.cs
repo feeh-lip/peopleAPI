@@ -1,7 +1,6 @@
 ﻿namespace People.API.Interfaces;
 
-public interface IPeopleRepository
+public interface IPeopleService
 {
-    [Get("/api/people")]
     Task<PeopleModels> GetPeoples();
 }
