@@ -17,7 +17,7 @@ public class PeopleService : IPeopleService
 
             if (peoples is null || !peoples.Results.Any())
             {
-                //return erro
+                throw new Exception("Não foram encontradas pessoas");
             }
 
             List<PeopleDto> peopleDto = new List<PeopleDto>();
@@ -54,8 +54,7 @@ public class PeopleService : IPeopleService
         }
         catch (Exception ex)
         {
-
-            throw;
+            throw new Exception("Aconteceu algum erro na solicitação. ", ex.InnerException);
         }
     }
 }
