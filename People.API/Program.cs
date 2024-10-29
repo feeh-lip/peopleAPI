@@ -1,9 +1,17 @@
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddRefitClient<IPeopleRepository>().ConfigureHttpClient(p =>
+{
+    var baseUrl = builder.Configuration.GetValue<string>("PeopleUrlAPI");
+    p.BaseAddress = new Uri(baseUrl);
+});
+
 
 var app = builder.Build();
 
