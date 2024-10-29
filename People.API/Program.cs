@@ -12,6 +12,7 @@ builder.Services.AddRefitClient<IPeopleRepository>().ConfigureHttpClient(p =>
     p.BaseAddress = new Uri(baseUrl);
 });
 
+builder.Services.AddScoped<IPeopleService, PeopleService>();
 
 var app = builder.Build();
 
