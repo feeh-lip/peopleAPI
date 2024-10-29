@@ -26,9 +26,9 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 
-app.MapGet("/api/peoples", async (IPeopleService service, string nome) =>
+app.MapGet("/api/peoples", async (IPeopleService service, int page, string nome) =>
 {
-    var result = await service.GetPeoples(nome);
+    var result = await service.GetPeoples(page, nome);
 
     return Results.Ok(result);
 });

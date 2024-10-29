@@ -2,6 +2,6 @@
 
 public interface IPeopleRepository
 {
-    [Get("/api/people")]
-    Task<PeopleModels> GetPeoples();
+    [Get("/api/people/?page={page}")]
+    Task<PeopleModels> GetPeoples(int page);
 }

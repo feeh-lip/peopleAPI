@@ -9,11 +9,11 @@ public class PeopleService : IPeopleService
         _peopleRepository = peopleRepository;
     }
 
-    public async Task<List<PeopleDto>> GetPeoples(string nome)
+    public async Task<List<PeopleDto>> GetPeoples(int page, string nome)
     {
         try
         {
-            var peoples = await _peopleRepository.GetPeoples();
+            var peoples = await _peopleRepository.GetPeoples(page);
 
             if (peoples is null || !peoples.Results.Any())
             {

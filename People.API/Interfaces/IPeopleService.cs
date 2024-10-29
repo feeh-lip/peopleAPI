@@ -2,5 +2,5 @@
 
 public interface IPeopleService
 {
-    Task<List<PeopleDto>> GetPeoples(string nome);
+    Task<List<PeopleDto>> GetPeoples(int page, string nome);
 }
