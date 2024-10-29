@@ -26,13 +26,12 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 
-app.MapGet("/weatherforecast", () =>
+app.MapGet("/api/peoples", async (IPeopleService service, string nome) =>
 {
-  
-    return null;
-})
-.WithName("GetWeatherForecast")
-.WithOpenApi();
+    var result = await service.GetPeoples(nome);
+
+    return Results.Ok(result);
+});
 
 app.Run();
 

@@ -2,3 +2,4 @@
 global using People.API.Interfaces;
 global using People.API.Models;
 global using People.API.Services;
+global using People.API.DTOS;

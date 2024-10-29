@@ -2,5 +2,5 @@
 
 public interface IPeopleService
 {
-    Task<PeopleModels> GetPeoples();
+    Task<List<PeopleDto>> GetPeoples(string nome);
 }
